@@ -87,8 +87,40 @@ function initAnimationScroll() {
   }
 }
 
+function initCountdown() {
+  const countDownDate = new Date("Nov 26, 2021 00:00:00 GMT-0300").getTime();
+
+  return setInterval(function() {
+
+    // Get today's date and time
+    const now = new Date().getTime();
+  
+    // Find the distance between now and the count down date
+    const distance = countDownDate - now;
+  
+    // Time calculations for days, hours, minutes and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+    // Display the result in the element with id="demo"
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+  
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "Começou!";
+    }
+  }, 1000);
+}
+
 
 initTabNav();
 initAccordion();
 initScrollSuave(); 
-initAnimationScroll()
+initAnimationScroll();
+initCountdown();

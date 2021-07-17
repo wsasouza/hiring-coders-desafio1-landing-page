@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2f4f762cce.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script>
     document.documentElement.className += ' js';
   </script>
+  <link rel="shortcut icon" href="./assets/gamer.ico" />
   <title>Hiring Coders | Desafio 01</title>
 </head>
+
 <body>
   <nav class="menu js-menu">
     <ul>
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#faq">Faq</a></li>
-      <li><a href="#contato">Fique por dentro</a></li>      
+      <li><a href="#contato">Fique por dentro</a></li>
     </ul>
   </nav>
 
@@ -38,51 +42,51 @@
       </li>
       <li>
         <img src="assets/kit-full.jpg">
-      </li>     
+      </li>
     </ul>
 
     <div class="produtos-descricao js-tabcontent">
       <section>
         <h2>Fones Headset</h2>
-        <p>A Gamers World vai disponibilizar uma variedade incrível 
+        <p>A Gamers World vai disponibilizar uma variedade incrível
           de fones Headset da linha Gamer.</p>
-        <p>Serão diversos modelos de fabricantes consagrados no mercado 
-          com preços e condições jamais vistos.</p>        
+        <p>Serão diversos modelos de fabricantes consagrados no mercado
+          com preços e condições jamais vistos.</p>
       </section>
-      
+
       <section>
         <h2>Teclados</h2>
-        <p>A Gamers World vai disponibilizar uma variedade incrível 
+        <p>A Gamers World vai disponibilizar uma variedade incrível
           de teclados da linha Gamer.</p>
-        <p>Serão diversos modelos de fabricantes consagrados no mercado 
-          com preços e condições jamais vistos.</p>        
+        <p>Serão diversos modelos de fabricantes consagrados no mercado
+          com preços e condições jamais vistos.</p>
       </section>
 
       <section>
         <h2>Mouses</h2>
-        <p>A Gamers World vai disponibilizar uma variedade incrível 
+        <p>A Gamers World vai disponibilizar uma variedade incrível
           de mouses da linha Gamer.</p>
-        <p>Serão diversos modelos de fabricantes consagrados no mercado 
-          com preços e condições jamais vistos.</p> 
+        <p>Serão diversos modelos de fabricantes consagrados no mercado
+          com preços e condições jamais vistos.</p>
       </section>
 
       <section>
         <h2>Combo Essencial</h2>
-        <p>A Gamers World vai disponibilizar uma variedade incrível 
+        <p>A Gamers World vai disponibilizar uma variedade incrível
           de combos de teclados e mouses da linha Gamer.</p>
-        <p>Serão diversos modelos de fabricantes consagrados no mercado 
-          com preços e condições jamais vistos.</p>        
+        <p>Serão diversos modelos de fabricantes consagrados no mercado
+          com preços e condições jamais vistos.</p>
       </section>
 
       <section>
         <h2>Combo Full</h2>
-        <p>A Gamers World vai disponibilizar uma variedade incrível 
-          de kits completos da linha gamer (teclado, mouse, mousepad e 
+        <p>A Gamers World vai disponibilizar uma variedade incrível
+          de kits completos da linha gamer (teclado, mouse, mousepad e
           fone headset.</p>
-        <p>Serão diversos modelos de fabricantes consagrados no mercado 
-          com preços e condições jamais vistos.</p> 
+        <p>Serão diversos modelos de fabricantes consagrados no mercado
+          com preços e condições jamais vistos.</p>
       </section>
-      
+
     </div>
   </section>
 
@@ -92,30 +96,62 @@
       <dt>Quando vai ser Black Friday esse ano?</dt>
       <dd>Em 2021 a Black Friday vai ser realizada no dia 26 de novembro.</dd>
       <dt>Os descontos oferecidos vão mesmo valer a pena?</dt>
-      <dd>Sim, os produtos estarão com descontos reais de 20% a 70%. Fiquem ligados, pois os estoques vão ser limitados</dd>
+      <dd>Sim, os produtos estarão com descontos reais de 20% a 70%. Fiquem ligados, pois os estoques vão ser limitados
+      </dd>
       <dt>Todos os produtos vão estar com descontos?</dt>
       <dd>Sim, todo a nossa linha de produtos vão estar com descontos imperdíveis.</dd>
       <dt>Como posso receber notícias e ser avisado em primeira mão?</dt>
-      <dd>Cadastre o seu melhor e-mail logo abaixo no site, nós ainda vamos dar um desconto extra para quem se cadastrar na nossa plataforma.</dd>
+      <dd>Cadastre o seu melhor e-mail logo abaixo no site, nós ainda vamos dar um desconto extra para quem se cadastrar
+        na nossa plataforma.</dd>
     </dl>
   </section>
 
-  <section class="grid-section contato js-scroll" id="contato">
+  <section class="grid-section faq js-scroll" id="contato">
     <h1 class="titulo">Fique por dentro</h1>
-    <form class="faq-lista js-accordion">
-      
-    </form>
+    <div class="faq-lista">
+
+      <div class="countdown">
+        <div class="card">
+          <span id="days">00</span>
+          <p>Dias</p>
+        </div>
+        <div class="card">
+          <span id="hours">00</span>
+          <p>Horas</p>
+        </div>
+        <div class="card">
+          <span id="minutes">00</span>
+          <p>Minutos</p>
+        </div>
+        <div class="card">
+          <span id="seconds">00</span>
+          <p>Segundos</p>
+        </div>
+      </div>
+      <div>
+
+        <form class="form">
+          <input id="email" type="email" placeholder="Digite seu e-mail">
+          <button onclick="saveOnStorage()">Enviar</button>
+
+        </form>
+      </div>
   </section>
 
-  <footer class="copy">
-    <p><strong>©</strong> Todos os direitos reservados | 
-        Desenvolvido por 
-        <a href="https://github.com/wsasouza/hiring-coders-desafio1-landing-page"
-          target="_blank">
-          wsasouza@hotmail.com</a></p>
-  </footer>                                      
 
-  <script src="script.js"></script> 
-  
+
+  <footer class="copy">
+    <p><strong>©</strong> Todos os direitos reservados |
+      Desenvolvido por
+      <a href="https://github.com/wsasouza/hiring-coders-desafio1-landing-page" target="_blank">
+        wsasouza@hotmail.com
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
