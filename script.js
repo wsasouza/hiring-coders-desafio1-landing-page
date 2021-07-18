@@ -104,7 +104,7 @@ function initCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
-    // Display the result in the element with id="demo"
+    // Display the result in the element with id="countdown"
     document.getElementById('days').innerHTML = days;
     document.getElementById('hours').innerHTML = hours;
     document.getElementById('minutes').innerHTML = minutes;
@@ -118,9 +118,30 @@ function initCountdown() {
   }, 1000);
 }
 
+function initHandleSaveOnStorage() {
+  const form = document.getElementById('form-container')
+
+  return form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+
+    let subscribeDiv = document.getElementById('subscribe')
+
+    let jsonData = JSON.stringify({ name, email })
+    localStorage.setItem('lead', jsonData)
+
+    subscribeDiv.innerHTML =
+      '<p>Parabéns, você está inscrito e agora receberá em primeira mão todas as nossas promoções!</p>'
+    subscribeDiv.style.paddingTop = '30px'
+  })
+}
+
 
 initTabNav();
 initAccordion();
 initScrollSuave(); 
 initAnimationScroll();
 initCountdown();
+initHandleSaveOnStorage();
