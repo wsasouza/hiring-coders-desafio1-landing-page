@@ -201,15 +201,18 @@ body {
 }
 
 .form-container legend {
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   font-weight: bold;
   font-family: 'IBM Plex Mono', monospace;
-  color: #c619d6;
+  color: #DCDCDC;
+  background-color: #c619d6;
+  border-radius: 8px;
+  padding: 8px;
 
 }
 
 input {
-  border: 2px solid rgb(75, 219, 75);
+  border: 2px solid #c619d6;
   border-radius: 8px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
