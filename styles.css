@@ -226,7 +226,8 @@ input {
 }
 
 input::placeholder {
-  color: #faf6ed;  
+  color: #faf6ed; 
+  filter: brightness(0.8); 
   font-family: 'IBM Plex Mono', monospace;
   font-style: italic;
 }
