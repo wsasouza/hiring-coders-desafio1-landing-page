@@ -113,18 +113,27 @@ function initCountdown() {
   }, 1000);
 }
 
-function saveOnLocalStorage() {
-  if (localStorage.cont) {
-    localStorage.cont = Number(localStorage.cont) + 1;
-  } else {
-    localStorage.cont = 1;
-  }
+function saveOnLocalStorage() { 
 
-  const client = document.getElementById("name").value + ' | ' +
-    document.getElementById("email").value;
+  let name = document.getElementById('name').value;
+	let email = document.getElementById('email').value;
+
+	let data = { name, email };	
+
+  console.log(data);
   
-  if (client) {
-    localStorage.setItem("client: " + localStorage.cont, client);
+  if (data.name !== "" && data.email !== "") {    
+    let convertData = JSON.stringify(data);
+
+    if (localStorage.cont) {
+      localStorage.cont = Number(localStorage.cont) + 1;
+    } else {
+      localStorage.cont = 1;
+    }
+
+    localStorage.setItem("client: " + localStorage.cont, convertData);
+
+    alert("Email cadastrado com sucesso!");
   }
 }
 

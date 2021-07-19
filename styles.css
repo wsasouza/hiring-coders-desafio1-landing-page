@@ -216,7 +216,7 @@ input {
   border-radius: 8px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
-  color: #00FF00;
+  color: #faf6ed;
   font-weight: bold;
   width: 100%;
   padding: 8px;
@@ -226,15 +226,15 @@ input {
 }
 
 input::placeholder {
-  color:#00FF00;
-  font-weight: bold;
+  color: #faf6ed;  
   font-family: 'IBM Plex Mono', monospace;
+  font-style: italic;
 }
 
 input:focus { 
   outline: none !important;
-  border-color: #c619d6;
-  box-shadow: 0 0 10px #c619d6;
+  border-color: #00FF00;
+  box-shadow: 0 0 10px #00FF00;
 }
 
 button {
