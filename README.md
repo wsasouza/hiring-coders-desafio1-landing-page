@@ -1,22 +1,13 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Hiring Coders Desafio 01 Landing Page" />
+  <img src="./assets/images/games-world.gif" alt="Hiring Coders Desafio 01 Landing Page" />
 
 &#xa0;
 
-  <!-- <a href="https://hiringcodersdesafio01landingpage.netlify.app">Demo</a> -->
+<a href="https://gamersworld-landing.netlify.app/">Demo</a>
+
 </div>
 
 <h1 align="center">Hiring Coders Desafio 01 Landing Page</h1>
-
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/wsasouza/hiring-coders-desafio-01-landing-page?color=56BEB8">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/wsasouza/hiring-coders-desafio-01-landing-page?color=56BEB8">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/wsasouza/hiring-coders-desafio-01-landing-page?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/wsasouza/hiring-coders-desafio-01-landing-page?color=56BEB8">
-</p>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -44,9 +35,9 @@ Describe your project
 
 The following tools were used in this project:
 
-- [HTML5](https://expo.io/)
-- [CSS3](https://nodejs.org/en/)
-- [Javascript](https://pt-br.reactjs.org/)
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 ## :white_check_mark: Requirements
 
@@ -62,7 +53,7 @@ $ git clone https://github.com/wsasouza/hiring-coders-desafio-01-landing-page
 $ cd hiring-coders-desafio-01-landing-page
 
 # Run the project
-$ open index.html with Live Server
+$ open index.html // with Live Server
 
 ```
 
