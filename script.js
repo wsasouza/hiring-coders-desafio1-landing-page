@@ -1,34 +1,32 @@
 function initTabNav() {
-  const tabMenu = document.querySelectorAll('.js-tabmenu li');
-  const tabContent = document.querySelectorAll('.js-tabcontent section');
+  const tabMenu = document.querySelectorAll(".js-tabmenu li");
+  const tabContent = document.querySelectorAll(".js-tabcontent section");
 
-  if(tabMenu.length && tabContent.length) {
-    tabContent[0].classList.add('ativo');
+  if (tabMenu.length && tabContent.length) {
+    tabContent[0].classList.add("ativo");
 
     function activeTab(index) {
       tabContent.forEach((section) => {
-        section.classList.remove('ativo');
+        section.classList.remove("ativo");
       });
-      tabContent[index].classList.add('ativo');
+      tabContent[index].classList.add("ativo");
     }
 
     tabMenu.forEach((itemMenu, index) => {
-      itemMenu.addEventListener('click', () => {
+      itemMenu.addEventListener("click", () => {
         activeTab(index);
       });
     });
   }
 }
 
-
 function initAccordion() {
-  const accordionList = document.querySelectorAll('.js-accordion dt');
-  const activeClass = 'ativo';
+  const accordionList = document.querySelectorAll(".js-accordion dt");
+  const activeClass = "ativo";
 
-  if(accordionList.length) {
+  if (accordionList.length) {
     accordionList[0].classList.add(activeClass);
     accordionList[0].nextElementSibling.classList.add(activeClass);
-  
 
     function activeAccordion() {
       this.classList.toggle(activeClass);
@@ -36,76 +34,71 @@ function initAccordion() {
     }
 
     accordionList.forEach((item) => {
-      item.addEventListener('click', activeAccordion);
-    })
-  }  
+      item.addEventListener("click", activeAccordion);
+    });
+  }
 }
 
-function initScrollSuave(){
+function initScrollSuave() {
   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
   function scrollToSection(event) {
     event.preventDefault();
-    const href = event.currentTarget.getAttribute('href');
-    const section = document.querySelector(href)
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
 
     section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
-  
   }
 
   linksInternos.forEach((link) => {
-    link.addEventListener('click', scrollToSection);
-  })
+    link.addEventListener("click", scrollToSection);
+  });
 }
 
 function initAnimationScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
 
-  const sections = document.querySelectorAll('.js-scroll');
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.6;
 
-  if(sections.length) {
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowMetade < 0;
+        if (isSectionVisible) section.classList.add("ativo");
+        else section.classList.remove("ativo");
+      });
+    }
 
-      const windowMetade = window.innerHeight * 0.6;
+    animaScroll();
 
-      function animaScroll() {
-        sections.forEach((section) => {
-          const sectionTop = section.getBoundingClientRect().top;
-          const isSectionVisible = (sectionTop - windowMetade) < 0;    
-          if(isSectionVisible) 
-            section.classList.add('ativo');
-          else 
-            section.classList.remove('ativo');
-        })
-      }
-
-      animaScroll()
-
-      window.addEventListener('scroll', animaScroll);
-
+    window.addEventListener("scroll", animaScroll);
   }
 }
 
 function initCountdown() {
-  const countDownDate = new Date("Nov 26, 2021 00:00:00 GMT-0300").getTime();
+  const countDownDate = new Date("Nov 25, 2022 00:00:00 GMT-0300").getTime();
 
-  return setInterval(function() {
-    
-    const now = new Date().getTime(); 
-    
+  return setInterval(function () {
+    const now = new Date().getTime();
+
     const distance = countDownDate - now;
-        
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-    document.getElementById('days').innerHTML = days;
-    document.getElementById('hours').innerHTML = hours;
-    document.getElementById('minutes').innerHTML = minutes;
-    document.getElementById('seconds').innerHTML = seconds;  
-    
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("countdown").innerHTML = "Começou!";
@@ -113,16 +106,15 @@ function initCountdown() {
   }, 1000);
 }
 
-function saveOnLocalStorage() { 
+function saveOnLocalStorage() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
 
-  let name = document.getElementById('name').value;
-	let email = document.getElementById('email').value;
-
-	let data = { name, email };	
+  let data = { name, email };
 
   console.log(data);
-  
-  if (data.name !== "" && data.email !== "") {    
+
+  if (data.name !== "" && data.email !== "") {
     let convertData = JSON.stringify(data);
 
     if (localStorage.cont) {
@@ -139,8 +131,6 @@ function saveOnLocalStorage() {
 
 initTabNav();
 initAccordion();
-initScrollSuave(); 
+initScrollSuave();
 initAnimationScroll();
 initCountdown();
-
-
